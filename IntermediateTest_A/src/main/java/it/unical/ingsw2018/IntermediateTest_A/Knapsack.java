@@ -43,4 +43,26 @@ public class Knapsack
 		currentWeight = 0;
 	}
     
+	public void addItem(Item item) throws RuntimeException {
+		if (currentWeight+item.weight <= capacity)
+		{
+		items.add(item);
+		currentWeight+=item.weight;
+		currentValue+=item.value;
+		}
+		else throw new RuntimeException();
+			
+	}
+	
+	public void removeItem(Item item) {
+		items.remove(item);
+		currentWeight-=item.weight;
+		currentValue-=item.value;
+	}
+	
+	public Item getBestItem() {
+		
+		return items.last();
+	}
+	
 }
