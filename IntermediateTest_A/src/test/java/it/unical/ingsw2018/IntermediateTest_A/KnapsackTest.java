@@ -59,6 +59,22 @@ public class KnapsackTest {
 		}
 	
 	
+	@Test
+	public void getBestItemTest() {
+		
+		
+		knapsack.addItem(new Item(1, 10));
+		knapsack.addItem(new Item(2, 10));		
+		knapsack.addItem(new Item(3, 10));
+		knapsack.addItem(new Item(4, 10));
+		
+		Item i=knapsack.getBestItem();
+		int max_rapporto= i.getValue()/i.getWeight();
+		
+		Assert.assertEquals(10, max_rapporto);
+	}
+	
+	
 	
 	
 }
