@@ -50,6 +50,7 @@ public class KnapsackTest {
 	public void exceptioner() {
 		Item big = new Item(101, 1);
 		knapsack.addItem(big);
+		System.out.println("ok");
 	}
 	
 	@Test
