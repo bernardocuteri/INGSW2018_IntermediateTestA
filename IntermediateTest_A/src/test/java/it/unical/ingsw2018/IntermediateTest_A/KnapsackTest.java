@@ -47,8 +47,8 @@ public class KnapsackTest {
 		
 		knapsack.removeItem(c);
 		
-		Assert.assertEquals(50, knapsack.getCurrentWeight());
-        Assert.assertEquals(9, knapsack.getCurrentValue());
+		Assert.assertEquals(30, knapsack.getCurrentWeight());
+        Assert.assertEquals(5, knapsack.getCurrentValue());
 		
         
         
