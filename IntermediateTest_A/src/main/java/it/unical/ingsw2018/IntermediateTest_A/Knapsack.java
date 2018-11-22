@@ -15,7 +15,7 @@ public class Knapsack
 	
 	public Knapsack(int capacity) {
 		this.capacity = capacity;
-		this.currentWeight = 0;
+		this.currentWeight = 0; 
 		this.currentValue = 0;
 		this.items = new TreeSet<>();
 	}

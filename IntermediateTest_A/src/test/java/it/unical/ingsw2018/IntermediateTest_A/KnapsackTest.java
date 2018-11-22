@@ -27,7 +27,7 @@ public class KnapsackTest {
 		knapsack.addItem(b);		
 		
 		Assert.assertEquals(30, knapsack.getCurrentWeight());
-		Assert.assertEquals(5, knapsack.getCurrentValue());
+		Assert.assertEquals(5, knapsack.getCurrentValue()); 
 	}
 	
 	@Test
