@@ -50,12 +50,14 @@ public class KnapsackTest {
 	public void getBestItemTest() {
 		Item itm1 = new Item(2, 5);
 		Item itm2 = new Item(4, 7);
-		Item itm3 = new Item(3, 4);
+		Item itm3 = new Item(5, 8);
+		Item itm4 = new Item(3, 4);
 		knapsack.addItem(itm1);
 		knapsack.addItem(itm2);
 		knapsack.addItem(itm3);
+		knapsack.addItem(itm4);
 		Item itm = knapsack.getBestItem();
-		Assert.assertEquals(11, (itm.getWeight() + itm.getValue()));
+		Assert.assertEquals(13, (itm.getWeight() + itm.getValue()));
 	}
 	
 	@Test(timeout=1000)
