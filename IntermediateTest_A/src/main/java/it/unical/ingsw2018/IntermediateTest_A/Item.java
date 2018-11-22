@@ -1,6 +1,6 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
-public class Item {
+public class Item implements Comparable {
 
 	int weight;
 	int value;
@@ -17,6 +17,16 @@ public class Item {
 	
 	public int getValue() {
 		return value;
+	}
+
+	public int getRapporto() {
+		return value/weight;
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		
+		return 0;
 	}
 	
 	

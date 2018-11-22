@@ -20,6 +20,32 @@ public class Knapsack
 		this.items = new TreeSet<>();
 	}
 
+	public void addItem(Item item) {
+		if(currentWeight + item.getWeight() < capacity) {
+			items.add(item);
+			currentWeight += item.getWeight();
+			currentValue += item.getValue();
+		}
+		else throw new KnapsackInsertionError();
+	}
+	
+	public void removeItem(Item item) {
+		items.remove(item);
+		this.currentValue -= item.getValue();
+		this.currentWeight -= item.getWeight();
+	}
+	
+	public Item getBestItem() {
+		Item bestItem = null;
+		int rapporto = 0;
+		for(Item i : items) {
+			if((i.getValue()/i.getWeight()) > rapporto) {
+				rapporto = i.getValue()/i.getWeight();
+				bestItem = i;
+			}
+		}
+	return bestItem;
+	}
 	
 	public int getCurrentValue() {
 		return currentValue;
