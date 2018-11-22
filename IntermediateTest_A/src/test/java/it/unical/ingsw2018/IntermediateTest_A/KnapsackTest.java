@@ -71,9 +71,9 @@ public class KnapsackTest {
 	@Test(timeout=1000)
 	public void Insert1000Element() {
 		Random random=new Random();
-		Knapsack knapsack2 = new Knapsack(1000);
+		Knapsack knapsack2 = new Knapsack(100000);
 		for(int i=0;i<1000;i++) {
-			Item prova=new Item(random.nextInt(),random.nextInt());
+			Item prova=new Item(random.nextInt(3),random.nextInt(3));
 			knapsack2.addItem(prova);
 		}			
 	}
