@@ -30,7 +30,7 @@ public class Item  implements Comparator<Item>{
 	{
 		int v1 = o1.value/o1.weight;
 		int v2 = o2.value/o2.weight;
-		return (v1 <= v2) ? -1 : 1;
+		return (v1 >= v2) ? -1 : 1;
 	}
 	
 	

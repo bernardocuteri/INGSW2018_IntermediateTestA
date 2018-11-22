@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Random;
 
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
