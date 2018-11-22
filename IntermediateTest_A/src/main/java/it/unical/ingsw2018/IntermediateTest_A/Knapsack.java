@@ -1,5 +1,6 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Knapsack 
@@ -43,4 +44,24 @@ public class Knapsack
 		currentWeight = 0;
 	}
     
+	public void addItem(Item item) {
+		int weight=item.getWeight();
+		if(currentWeight+weight>capacity) throw new KnapsackInsertionError();
+		else {
+			items.add(item);
+			currentWeight=currentWeight+item.getWeight();
+			currentValue=currentValue+item.getValue();
+		}
+	}
+	
+	public void removeItem(Item item) {
+		items.remove(item);
+		currentWeight=currentWeight-item.getWeight();
+		currentValue=currentValue-item.getValue();
+	}
+	
+	public Item getBestItem() {
+		return items.last();
+	}
+
 }
