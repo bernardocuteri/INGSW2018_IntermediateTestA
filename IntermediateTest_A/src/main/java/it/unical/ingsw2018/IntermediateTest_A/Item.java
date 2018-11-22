@@ -23,7 +23,12 @@ public class Item implements Comparable{
 	public int compareTo(Object arg0) {
 		if(arg0 instanceof Item) {
 			Item temp = (Item)arg0;
-			return this.weight/temp.weight;
+			if( this.value/this.weight > temp.value/temp.weight) {
+				return -1;
+			}
+			else if( this.value/this.weight == temp.value/temp.weight) {
+				return -1;
+			}
 		}
 		return 1;
 	}
