@@ -42,5 +42,36 @@ public class Knapsack
 		currentValue = 0;
 		currentWeight = 0;
 	}
+	
+	public void addItem(Item item) {
+		
+		if (items.size() > capacity)
+			//exeption
+			return;
+		
+		items.add(item);
+		
+		currentValue+=item.value;
+		currentWeight+=item.weight;
+		
+		
+	}
+	
+	public void removeItem(Item item) {
+		
+		Item temp = item;
+		
+		if (items.contains(item)){
+			items.remove(item);
+		}
+		
+		currentValue-=item.value;
+		currentWeight-=item.weight;
+	}
+	
+	public Item getBestItem() {
+	
+		return null;
+	}
     
 }
