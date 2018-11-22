@@ -21,7 +21,10 @@ public class Item implements Comparable{
 
 	@Override
 	public int compareTo(Object o) {
-		return weight-((Item) o).getWeight();
+		if(weight==((Item) o).getWeight()&&value==((Item) o).getValue())
+			return 0;
+		else
+			return weight-((Item) o).getWeight();
 	}
 	
 	
