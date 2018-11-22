@@ -26,16 +26,9 @@ public class KnapsackTest {
 		Item item1 = new Item(10, 10);
 		Item item2 = new Item(20, 20);
 		int valoreAttesoWeigth = knapsack.getCurrentWeight() + item1.getWeight() + item2.getWeight();
-		knapsack.addItem(item1); knapsack.addItem(item2);
-		Assert.assertEquals(valoreAttesoWeigth, knapsack.getCurrentWeight());
-	}
-	
-	@Test
-	public void ValueTest() {
-		Item item1 = new Item(10, 10);
-		Item item2 = new Item(20, 20);
 		int valoreAttesoValue = knapsack.getCurrentValue() + item1.getValue() + item2.getValue();
 		knapsack.addItem(item1); knapsack.addItem(item2);
+		Assert.assertEquals(valoreAttesoWeigth, knapsack.getCurrentWeight());
 		Assert.assertEquals(valoreAttesoValue, knapsack.getCurrentValue());
 	}
 	
@@ -45,17 +38,9 @@ public class KnapsackTest {
 		Item item2 = new Item(20, 20);
 		Item item3 = new Item(30, 30);
 		int valoreAttesoWeigth = knapsack.getCurrentWeight() + item1.getWeight() + item2.getWeight();
-		knapsack.addItem(item1); knapsack.addItem(item2); knapsack.addItem(item3); knapsack.removeItem(item3);
-		Assert.assertEquals(valoreAttesoWeigth, knapsack.getCurrentWeight());
-	}
-	
-	@Test
-	public void ValueTest2() {
-		Item item1 = new Item(10, 10);
-		Item item2 = new Item(20, 20);
-		Item item3 = new Item(30, 30);
 		int valoreAttesoValue = knapsack.getCurrentValue() + item1.getValue() + item2.getValue();
 		knapsack.addItem(item1); knapsack.addItem(item2); knapsack.addItem(item3); knapsack.removeItem(item3);
+		Assert.assertEquals(valoreAttesoWeigth, knapsack.getCurrentWeight());
 		Assert.assertEquals(valoreAttesoValue, knapsack.getCurrentValue());
 	}
 	
