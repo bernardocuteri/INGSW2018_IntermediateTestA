@@ -70,7 +70,7 @@ public class KnapsackTest {
 	@Test (timeout = 1000)
 	public void verifyInsertionOf1000Items(){
 		
-		Knapsack kn = new Knapsack(1000000);
+		Knapsack kn = new Knapsack(1000000000);
 		Random rand = new Random();
 		for (int i = 0; i < 1000; i++)
 		{
