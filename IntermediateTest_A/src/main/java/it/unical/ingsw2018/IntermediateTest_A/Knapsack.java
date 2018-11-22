@@ -21,7 +21,7 @@ public class Knapsack
 	}
 	
 	public void addItem(Item item) {
-		if(capacity <= currentWeight || (item.getWeight() + currentWeight) >= capacity) {
+		if(capacity < currentWeight || (item.getWeight() + currentWeight) > capacity) {
 			throw new RuntimeException("Zaino pieno");
 		}
 		items.add(item);

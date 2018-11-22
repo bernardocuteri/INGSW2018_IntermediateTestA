@@ -57,4 +57,12 @@ public class KnapsackTest {
 		Item itm = knapsack.getBestItem();
 		Assert.assertEquals(11, (itm.getWeight() + itm.getValue()));
 	}
+	
+	@Test(timeout=1000)
+	public void randomItemTest() {
+		Knapsack zaino = new Knapsack(1000);
+		for(int i=1; i<=1000; i++) {
+			zaino.addItem(new Item(1, 2));
+		}
+	}
 }
