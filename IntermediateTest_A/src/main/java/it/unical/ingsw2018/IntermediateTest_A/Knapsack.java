@@ -42,5 +42,35 @@ public class Knapsack
 		currentValue = 0;
 		currentWeight = 0;
 	}
+	
+	public void addItem(Item item) {
+		if(currentWeight + item.getWeight() > capacity) throw new KnapsackInsertionError();
+		else {
+			items.add(item);
+			currentValue += item.getValue();
+			currentWeight += item.getWeight();
+		}
+	}
+	
+	//ipotizzo che ci sia sempre
+	public void removeItem(Item item) {
+		currentWeight -= item.getWeight();
+		currentValue -= item.getValue();
+		items.remove(item);
+		
+	}
+	
+	public Item getBestItem() {
+		int rapporto = 0;
+		Item best = null;
+		
+		for(Item i : items) {
+			if(( i.getValue() / i.getWeight() ) > rapporto ) {
+				rapporto = i.getValue() / i.getWeight();
+				best = i;
+			}
+		}
+		return best;
+	}
     
 }
