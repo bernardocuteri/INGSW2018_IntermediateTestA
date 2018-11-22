@@ -21,7 +21,7 @@ public class KnapsackTest {
 		k.reset();
 	}
 	
-	
+	//
 	
 	@Test
 	public void verifyAfterTwoInsertions()
