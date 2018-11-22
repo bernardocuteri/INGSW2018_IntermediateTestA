@@ -12,7 +12,6 @@ public class KnapsackTest {
 
 	@BeforeClass
 	public static void init() {
-		System.out.println("ss");
 		knapsack = new Knapsack(100);
 	}
 
@@ -24,10 +23,9 @@ public class KnapsackTest {
 	@Test
 	public void AggiornamentoDueItem() {
 		Item i = new Item(20, 10);
-		Item i2 = new Item(30, 15);
+		Item i2 = new Item(30, 5);
 		knapsack.addItem(i);
 		knapsack.addItem(i2);
-		System.out.println(knapsack.getCurrentValue() + " " + (i.getValue() + i2.getValue()));
 		assertEquals(knapsack.getCurrentValue(), i.getValue() + i2.getValue());
 		assertEquals(knapsack.getCurrentWeight(), i.getWeight() + i2.getWeight());
 	}
@@ -42,7 +40,6 @@ public class KnapsackTest {
 		knapsack.addItem(i2);
 		knapsack.addItem(i3);
 		knapsack.removeItem(i);
-		System.out.println(knapsack.getCurrentValue() + " " + (i2.getValue() + i3.getValue()));
 		assertEquals(knapsack.getCurrentValue(), (i2.getValue() + i3.getValue()));
 		assertEquals(knapsack.getCurrentWeight(), i2.getWeight() + i3.getWeight());
 	}
@@ -69,6 +66,6 @@ public class KnapsackTest {
 	public void milleItems() {
 		Knapsack k = new Knapsack(10000);
 		for (int i = 0; i < 1000; i++)
-			k.addItem(new Item(1, 1));
+			k.addItem(new Item((i + 2), 1));
 	}
 }
