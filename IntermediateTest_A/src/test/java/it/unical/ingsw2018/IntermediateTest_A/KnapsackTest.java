@@ -14,6 +14,7 @@ public class KnapsackTest {
 	private static Knapsack knapsack;
 	Random rand = new Random();
 	
+	
 	@BeforeClass
 	public static void init() {
 		knapsack = new Knapsack(100);
