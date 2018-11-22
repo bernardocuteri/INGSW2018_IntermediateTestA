@@ -57,6 +57,7 @@ public class KnapsackTest {
 		assertEquals(3,item.weight);
 	}
 
+	
 	@Test (timeout=1000)
 	public void TimeControl() {
 		Knapsack sack = new Knapsack(10000);
