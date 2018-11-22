@@ -1,10 +1,9 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
+import java.util.Random;
+
+import org.junit.Assert;
 import org.junit.Before;
-
-import static org.junit.Assert.fail;
-
-import org.junit.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -74,7 +73,16 @@ public class KnapsackTest {
 		Assert.assertEquals(10, max_rapporto);
 	}
 	
-	
+	@Test(timeout=1000)
+	public void entroUnSecondo() {
+		
+		Knapsack zaino=new Knapsack(1000000);
+		Random r=new Random();
+		for(int i=0; i<1000;i++) {
+			zaino.addItem(new Item(r.nextInt(20), r.nextInt(20)));	
+		}
+		
+	}
 	
 	
 }
