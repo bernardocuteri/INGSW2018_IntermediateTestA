@@ -30,4 +30,22 @@ public class KnapsackTest {
 	
 		
 	}
+	
+	@Test
+	public void metodo2() {
+		
+		knapsack.addItem(new Item(10, 10));
+		knapsack.addItem(new Item(10, 10));
+		Item i=new Item(10, 10);
+		knapsack.addItem(i);
+		knapsack.removeItem(i);
+		Assert.assertEquals(20, knapsack.getCurrentValue());
+		Assert.assertEquals(20, knapsack.getCurrentWeight());
+	
+		
+	}
+	
+	
+	
+	
 }
