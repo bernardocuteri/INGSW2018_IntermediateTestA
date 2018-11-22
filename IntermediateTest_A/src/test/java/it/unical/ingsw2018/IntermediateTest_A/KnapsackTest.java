@@ -2,6 +2,8 @@ package it.unical.ingsw2018.IntermediateTest_A;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Random;
+
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -64,5 +66,21 @@ public class KnapsackTest {
 		knapsack.addItem(item2);
 		knapsack.addItem(item);
 		assertEquals(4, knapsack.getBestItem());
+	}
+	
+	@Test(timeout=1000)
+	public void kunit() {
+		int low=0;
+		int high=10;
+		Random r=new Random();
+		Random r2=new Random();
+		Knapsack knapsack2=new Knapsack(1000000000);
+		for(int i=0; i<1000; i++) {
+			int result=r.nextInt(high-low)+low;
+			int result2=r2.nextInt(high-low)+low;
+			System.out.print(result);
+			Item item=new Item(result,result2);
+			knapsack2.addItem(item);
+		}
 	}
 }
