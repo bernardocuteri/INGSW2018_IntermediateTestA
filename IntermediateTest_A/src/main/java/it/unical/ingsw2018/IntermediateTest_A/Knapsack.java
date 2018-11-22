@@ -2,7 +2,7 @@ package it.unical.ingsw2018.IntermediateTest_A;
 
 import java.util.TreeSet;
 
-public class Knapsack 
+public class Knapsack
 {
   
 	private int capacity;
@@ -42,5 +42,26 @@ public class Knapsack
 		currentValue = 0;
 		currentWeight = 0;
 	}
-    
+	
+	public void addItem(Item item) {
+		if(capacity >= currentWeight + item.getWeight()) {
+			items.add(item);
+			currentWeight += item.getWeight();
+			currentValue += item.getValue();
+		}else {
+			throw new KnapsackInsertionError("capacita' sforata");
+		}
+	}
+	
+	public void removeItem(Item item) {
+		currentWeight -= item.getWeight();
+		currentValue -= item.getValue();
+		items.remove(item);
+	}
+
+	public Item getBestItem() {
+		Item x = items.first();
+		return items.higher(x);
+	}
+
 }

@@ -4,4 +4,7 @@ public class KnapsackInsertionError extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 	
+	public KnapsackInsertionError(String message) {
+		System.out.println(message);
+	}
 }
