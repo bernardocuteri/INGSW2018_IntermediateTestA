@@ -1,10 +1,14 @@
 package it.unical.ingsw2018.IntermediateTest_A;
+import org.junit.*;
 
+import junit.framework.Test;
+
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Knapsack 
 {
-  
+	//peso massimo dello zaino
 	private int capacity;
     
 	private TreeSet<Item> items;
@@ -20,6 +24,36 @@ public class Knapsack
 		this.items = new TreeSet<>();
 	}
 
+	
+	public void addItem(Item i) {
+		if (this.currentWeight + i.getWeight() > this.capacity )
+			throw new KnapsackInsertionError();
+		this.items.add(i);
+		this.currentWeight += i.getWeight();
+		this.currentValue += i.getValue();
+	}
+	
+	public void removeItem(Item i) {
+		this.items.remove(i);
+		this.currentValue -= i.getValue();
+		this.currentWeight -= i.getWeight();
+	}
+	
+	public Item getBestItem() {
+		
+		float max = 0;
+		Item massimo = new Item(0,0);
+		Iterator<Item> itr = this.items.iterator();
+		
+		while(itr.hasNext()) {
+			Item i = itr.next();
+			if (i.getValue() / i.getWeight() > max ) {
+				max = i.getValue() / i.getWeight();
+				massimo = i;
+			}
+		}
+		return massimo;
+	}
 	
 	public int getCurrentValue() {
 		return currentValue;
