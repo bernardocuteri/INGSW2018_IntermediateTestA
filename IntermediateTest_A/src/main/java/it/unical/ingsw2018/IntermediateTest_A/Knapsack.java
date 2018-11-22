@@ -66,8 +66,17 @@ public class Knapsack {
 		this.currentValue += v;
 		this.currentWeight += w;
 	}
-
 	public Item getBestItem() {
-		return this.items.first();
+		Item I = null;
+		Iterator<Item> itr = items.iterator();
+		while(itr.hasNext()) {
+			if(I == null)
+				I=itr.next();
+			else if((itr.next().getValue()/itr.next().getWeight()) >= (I.getValue()/I.getWeight()))
+					I = itr.next();
+		}
+		return I;
+		
 	}
+	
 }
