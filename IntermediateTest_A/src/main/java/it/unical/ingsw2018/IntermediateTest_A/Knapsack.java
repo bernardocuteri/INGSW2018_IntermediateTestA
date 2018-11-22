@@ -76,7 +76,6 @@ public class Knapsack
 				best = item;
 			}
 		}
-		
 		return best;
 	}   
 }

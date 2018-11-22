@@ -56,6 +56,7 @@ public class KnapsackTest {
 		knapsack.addItem(new Item(2, 2));
 	}
 	
+	
 	@Test
 	public void verifyBestItem()  {
 		
