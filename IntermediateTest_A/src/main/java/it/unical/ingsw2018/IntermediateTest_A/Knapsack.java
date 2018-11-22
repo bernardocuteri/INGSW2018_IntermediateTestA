@@ -1,5 +1,6 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
+import java.util.EmptyStackException;
 import java.util.TreeSet;
 
 public class Knapsack 
@@ -43,4 +44,46 @@ public class Knapsack
 		currentWeight = 0;
 	}
     
+	public void addItem(Item item)
+	{
+		if((item.getWeight() + getCurrentWeight()) < capacity)
+		{
+			items.add(item);
+			currentWeight += item.getWeight();
+			currentValue += item.getValue();
+		}
+		else
+		{
+			throw new EmptyStackException();
+		}
+	}
+	
+	public void removeItem(Item item)
+	{
+		int weight = item.getWeight();
+		int value = item.getValue();
+		items.remove(item);
+		currentWeight = getCurrentWeight() - weight;
+		currentValue = getCurrentValue() - value;
+	}
+	
+	public Item getBestItem()
+	{
+		int report = 0;
+		int max = 0;
+		Item item = null;
+
+		for(Item it : items)
+		{
+			report = it.getValue()/it.getWeight();
+			
+			if(report > max)
+			{
+				max = report;
+				item = it;
+			}
+		}
+		
+		return item;
+	}
 }
