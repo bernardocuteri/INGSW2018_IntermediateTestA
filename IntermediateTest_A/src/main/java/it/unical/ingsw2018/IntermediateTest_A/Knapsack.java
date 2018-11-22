@@ -3,8 +3,7 @@ package it.unical.ingsw2018.IntermediateTest_A;
 import java.util.TreeSet;
 
 public class Knapsack 
-{
-  
+{ 
 	private int capacity;
     
 	private TreeSet<Item> items;
@@ -41,6 +40,29 @@ public class Knapsack
 		items.clear();
 		currentValue = 0;
 		currentWeight = 0;
+	}
+	
+	public void addItem(Item item) throws Exception {
+		int weight = item.getWeight();
+		int value = item.getValue();
+		
+		if (currentWeight + weight > capacity) {
+			throw new Exception("Can't fit item into the knapsack!");
+		} else {
+			currentWeight += weight;
+			currentValue += value; 
+			items.add(item);
+		}
+	}
+	
+	public void removeItem(Item item) {
+		items.remove(item);
+		currentWeight -= item.weight;
+		currentValue -= item.value; 
+	}
+	
+	public Item getBestItem() {
+		return items.first();
 	}
     
 }
