@@ -1,11 +1,12 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
 import static org.junit.Assert.assertEquals;
+import org.junit.*;
 
 import java.util.Random;
 
 
-import org.junit.*;
+
 
 public class KnapsackTest {
 	
@@ -21,7 +22,6 @@ public class KnapsackTest {
 		k.reset();
 	}
 	
-	//
 	
 	@Test
 	public void verifyAfterTwoInsertions()
@@ -31,8 +31,6 @@ public class KnapsackTest {
 		
 		assertEquals(4, k.getCurrentWeight());
 		assertEquals(4, k.getCurrentValue());
-		System.out.println(k.getCurrentWeight());
-		System.out.println(k.getCurrentValue());
 	}
 	
 	
