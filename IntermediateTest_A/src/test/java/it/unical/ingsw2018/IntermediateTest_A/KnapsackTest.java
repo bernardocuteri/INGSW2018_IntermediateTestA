@@ -72,11 +72,12 @@ public class KnapsackTest {
 	}
 	
 
-	@Test(timeout=1)
+	@Test(timeout=1000)
 	public void checkInitThousand() {
 		Knapsack tmp=new Knapsack(1000);
 		Random random=new Random();
-		tmp.addItem(new Item(1,random.nextInt(10)));
+		for(int i=0;i<1000;i++)
+		tmp.addItem(new Item(random.nextInt(10),random.nextInt(10)));
 		
 	}
 	
