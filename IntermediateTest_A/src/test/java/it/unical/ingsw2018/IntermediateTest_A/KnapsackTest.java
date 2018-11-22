@@ -51,7 +51,18 @@ public class KnapsackTest {
 		}
 	}
 	
-	
-	
+	/*@Test
+	public void bestItem() {
+		Item I1 = new Item(22, 4);
+		Item I2 = new Item(1, 4);
+		Item I3 = new Item(3,4);
+		Item I4 = new Item(4, 4);
+		knapsack.addItem(I1);
+		knapsack.addItem(I2);
+		knapsack.addItem(I3);
+		knapsack.addItem(I4);
+		assertEquals(I1.getWeight(), knapsack.getBestItem().weight);
+	}
+	*/
 	
 }
