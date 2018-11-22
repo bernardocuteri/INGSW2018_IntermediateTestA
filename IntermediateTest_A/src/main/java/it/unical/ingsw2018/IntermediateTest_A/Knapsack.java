@@ -1,6 +1,5 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
-import java.util.Comparator;
 import java.util.TreeSet;
 
 public class Knapsack {
