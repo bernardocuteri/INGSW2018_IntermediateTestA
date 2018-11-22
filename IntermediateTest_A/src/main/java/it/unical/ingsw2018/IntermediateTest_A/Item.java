@@ -1,9 +1,12 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
-public class Item {
+import java.util.Comparator;
+
+public class Item implements Comparable<Item>{
 
 	int weight;
 	int value;
+	
 	
 	public Item(int weight, int value) {
 		super();
@@ -18,6 +21,19 @@ public class Item {
 	public int getValue() {
 		return value;
 	}
+
+	@Override
+	public int compareTo(Item o) {
+		if(this.weight<o.weight)
+		return -1;
+		else if(this.weight==o.weight)
+			return 0;
+		
+		return 1;
+		
+	}
+
+
 	
 	
 }
