@@ -98,6 +98,7 @@ public class KnapsackTest {
 		Knapsack big_knapsack = new Knapsack(1000);
 		try {
 			for (int i = 0; i < 1000; ++i) {
+				// Peso fisso per assicurarmi ci entrino tutti
 				big_knapsack.addItem(new Item(1, (int) Math.random()));
 			}
 		} catch (Exception e) {
