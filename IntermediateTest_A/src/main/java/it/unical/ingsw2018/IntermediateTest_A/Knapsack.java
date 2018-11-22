@@ -13,11 +13,18 @@ public class Knapsack
 
 	private int currentValue;
 	
+	
+	
+	
+	
 	public Knapsack(int capacity) {
 		this.capacity = capacity;
 		this.currentWeight = 0;
 		this.currentValue = 0;
 		this.items = new TreeSet<>();
+	
+		
+	
 	}
 
 	
@@ -42,5 +49,26 @@ public class Knapsack
 		currentValue = 0;
 		currentWeight = 0;
 	}
-    
+
+	public void addItem(Item item) {
+		if (capacity == items.size()) {
+			throw new KnapsackInsertionError();
+		}
+		items.add(item);
+		currentWeight += item.weight;
+		currentValue += item.value;
+	}
+	
+
+	public void removeItem(Item item) {
+		items.remove(item);
+		currentWeight -= item.weight;
+		currentValue -= item.value;
+	}
+
+	public Item getBestItem() {
+		return items.last();
+	}
+	
+	
 }
