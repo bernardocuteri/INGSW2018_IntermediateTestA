@@ -4,41 +4,26 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Random;
 
-
-import org.junit.*;
+import org.junit.Test;
 
 public class KnapsackTest {
-	
-	private static Knapsack k;
-	
-	@BeforeClass
-	public static void init() {
-		k = new Knapsack(100);
-	}
-	
-	@Before
-	public void reset() {
-		k.reset();
-	}
-	
-	
 	
 	@Test
 	public void verifyAfterTwoInsertions()
 	{
+		Knapsack k = new Knapsack(10);
 		k.addItem(new Item(1, 2));
 		k.addItem(new Item(3, 2));
 		
 		assertEquals(4, k.getCurrentWeight());
 		assertEquals(4, k.getCurrentValue());
-		System.out.println(k.getCurrentWeight());
-		System.out.println(k.getCurrentValue());
 	}
 	
 	
 	@Test
 	public void verifyAfterThreeInsertions()
 	{
+		Knapsack k = new Knapsack(10);
 		k.addItem(new Item(1, 2));
 		k.addItem(new Item(3, 2));
 		
@@ -53,14 +38,16 @@ public class KnapsackTest {
 	@Test(expected = KnapsackInsertionError.class)
 	public void verifyOverflow()
 	{
+		Knapsack k = new Knapsack(10);
 		k.addItem(new Item(1, 2));
 		k.addItem(new Item(3, 2));
-		k.addItem(new Item(200, 2));
+		k.addItem(new Item(20, 2));
 	}
 	
 	@Test
 	public void verifyBestItem()
 	{
+		Knapsack k = new Knapsack(10);
 		k.addItem(new Item(1, 2));
 		k.addItem(new Item(2, 2));
 		Item toReturn = new Item(1, 4);
@@ -72,11 +59,11 @@ public class KnapsackTest {
 	@Test (timeout = 1000)
 	public void verifyInsertionOf1000Items(){
 		
-		Knapsack kn = new Knapsack(1000000);
+		Knapsack k = new Knapsack(1000000);
 		Random rand = new Random();
 		for (int i = 0; i < 1000; i++)
 		{
-			kn.addItem(new Item(rand.nextInt(10) + 1, rand.nextInt(10) + 1));
+			k.addItem(new Item(rand.nextInt(10) + 1, rand.nextInt(10) + 1));
 		}
 			
 	}
