@@ -62,6 +62,7 @@ public class Knapsack
 	}
 	
 	public Item getBestItem() {
+		// vedi Item::compareTo(Item)
 		return items.first();
 	}
     
