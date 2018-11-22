@@ -72,6 +72,6 @@ public class KnapsackTest {
 	public void performanceTest() {
 		Knapsack test1 = new Knapsack(2000);
 		for (int i = 0; i < 1000; i++)
-			test1.addItem(new Item((int) Math.random() + 1, (int) Math.random() + 1));
+			test1.addItem(new Item((int) (Math.random()*100) + 1, (int) (Math.random()*100) + 1));
 	}
 }
