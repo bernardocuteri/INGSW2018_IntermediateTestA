@@ -1,23 +1,26 @@
 package it.unical.ingsw2018.IntermediateTest_A;
 
+import java.util.Iterator;
 import java.util.TreeSet;
 
-public class Knapsack 
-{
-  
+public class Knapsack {
+
+
 	private int capacity;
     
 	private TreeSet<Item> items;
+
 	
 	private int currentWeight;
 
-	private int currentValue;
 	
+	private int currentValue;
+
 	public Knapsack(int capacity) {
 		this.capacity = capacity;
 		this.currentWeight = 0;
 		this.currentValue = 0;
-		this.items = new TreeSet<>();
+		this.items = new TreeSet<Item>(new Item());
 	}
 
 	
@@ -42,5 +45,29 @@ public class Knapsack
 		currentValue = 0;
 		currentWeight = 0;
 	}
-    
+
+	public void addItem(Item item) {
+
+		int capacityTemp = (this.items.size() + item.weight);
+
+		if( capacityTemp > this.capacity )
+			throw new KnapsackInsertionError();
+
+		this.items.add(item);
+		this.aggiorna(item.value, item.weight);
+	}
+
+	public void removeItem(Item item) {
+		this.items.remove(item);
+		this.aggiorna(-item.value, -item.weight);
+	}
+
+	private void aggiorna(int v, int w) {
+		this.currentValue += v;
+		this.currentWeight += w;
+	}
+
+	public Item getBestItem() {
+		return this.items.first();
+	}
 }
